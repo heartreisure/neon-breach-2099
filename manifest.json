@@ -1,0 +1,10 @@
+{
+    "name": "Neon Breach 2099",
+    "short_name": "NeonBreach",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#00ffff",
+    "icons": [{ "src": "icon.png", "sizes": "512x512", "type": "image/png" }]
+  }
+  

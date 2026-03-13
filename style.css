@@ -1,105 +1,54 @@
 body {
-    background-color: #050505;
-    color: #0ff;
-    font-family: 'Courier New', Courier, monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
+    background-color: #050505; color: #0ff;
+    font-family: 'Courier New', monospace;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh; margin: 0; overflow: hidden; touch-action: none;
 }
 
 #intro-screen {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: black; display: flex; justify-content: center; align-items: center; z-index: 100;
 }
 
-.terminal-text {
-    border-left: 3px solid #0ff;
-    padding: 20px;
-    background: rgba(0, 255, 255, 0.05);
-}
+.terminal-text { border-left: 3px solid #0ff; padding: 20px; max-width: 85%; }
+.terminal-text p { margin: 5px 0; font-size: 1rem; overflow: hidden; white-space: nowrap; animation: t 1.5s steps(30); }
+@keyframes t { from { width: 0 } to { width: 100% } }
 
 .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px #0ff;
-    font-weight: bold;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    margin-bottom: 15px; text-shadow: 0 0 10px #0ff; font-size: 0.85rem;
 }
 
 #grid {
-    width: 400px;
-    height: 400px;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    background: #111;
-    border: 3px solid #0ff;
-    box-shadow: 0 0 20px #0ff, inset 0 0 10px #0ff;
-    padding: 5px;
-    position: relative;
+    width: 90vw; height: 90vw; max-width: 380px; max-height: 380px;
+    display: grid; grid-template-columns: repeat(8, 1fr);
+    background: #111; border: 3px solid #0ff; box-shadow: 0 0 20px #0ff;
+    padding: 5px; touch-action: none; position: relative;
 }
 
 .candy {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin: 5px;
-    cursor: grab;
-    transition: transform 0.2s, box-shadow 0.2s;
+    width: 85%; height: 85%; border-radius: 50%; margin: auto;
+    transition: transform 0.2s;
 }
 
-.pink   { background: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
-.blue   { background: #00ffff; box-shadow: 0 0 15px #00ffff; }
-.green  { background: #00ff00; box-shadow: 0 0 15px #00ff00; }
-.yellow { background: #ffff00; box-shadow: 0 0 15px #ffff00; }
-.orange { background: #ff6600; box-shadow: 0 0 15px #ff6600; }
-.blank  { background: transparent; box-shadow: none; }
+.pink { background: #ff00ff; box-shadow: 0 0 10px #ff00ff; }
+.blue { background: #00ffff; box-shadow: 0 0 10px #00ffff; }
+.green { background: #00ff00; box-shadow: 0 0 10px #00ff00; }
+.yellow { background: #ffff00; box-shadow: 0 0 10px #ffff00; }
+.orange { background: #ff6600; box-shadow: 0 0 10px #ff6600; }
+.blank { background: transparent; box-shadow: none; opacity: 0; }
 
-.bomb {
-    border: 3px solid #fff;
-    box-shadow: 0 0 30px #fff, 0 0 50px #ff00ff;
-    animation: pulse 0.8s infinite alternate;
-}
-
-@keyframes pulse {
-    from { transform: scale(1); }
-    to { transform: scale(1.15); }
-}
+.bomb { border: 3px solid #fff; box-shadow: 0 0 25px #fff; animation: p 0.5s infinite alternate; }
+@keyframes p { from { transform: scale(0.85); } to { transform: scale(1.1); } }
 
 #msg-overlay {
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    font-size: 2rem;
-    color: #fff;
-    text-shadow: 0 0 20px #ff00ff, 0 0 40px #0ff;
-    pointer-events: none;
-    transition: 0.5s;
-    z-index: 10;
-    text-align: center;
-    width: 100%;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0);
+    font-size: 1.8rem; color: #fff; text-shadow: 0 0 20px #ff00ff;
+    transition: 0.4s; z-index: 10; pointer-events: none; text-align: center; width: 100%;
 }
-
-#msg-overlay.show { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+#msg-overlay.show { transform: translate(-50%, -50%) scale(1); }
 
 button {
-    background: transparent;
-    border: 1px solid #ff00ff;
-    color: #ff00ff;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-family: inherit;
-    box-shadow: 0 0 10px #ff00ff;
-    margin-top: 20px;
+    background: transparent; border: 1px solid #ff00ff; color: #ff00ff;
+    padding: 15px; cursor: pointer; box-shadow: 0 0 10px #ff00ff; margin-top: 20px; width: 100%; font-weight: bold;
 }
-
-button:hover { background: #ff00ff; color: black; }
-.combo { color: #ff00ff; }

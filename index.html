@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Breach 2099</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="intro-screen">
+        <div class="terminal-text">
+            <p>> INITIALISIERE NEON-LINK...</p>
+            <p>> ZIEL: ARASAKA MAINFRAME</p>
+            <p>> MISSION: ÜBERLASTE DIE DATENKERNE!</p>
+            <p>> INFO: 4ER-REIHEN ERZEUGEN KERNEL-BOMBEN.</p>
+            <button onclick="startGame()">SYSTEM INFILTRIEREN</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="stats">
+            <div class="stat-box">TIME: <span id="timer">60</span>s</div>
+            <div class="stat-box">SCORE: <span id="score">0</span></div>
+            <div class="stat-box">BEST: <span id="highscore">0</span></div>
+            <div class="stat-box combo">COMBO: x<span id="combo">1</span></div>
+        </div>
+        <div id="grid"></div>
+        <div id="msg-overlay">SYSTEM START...</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,10 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Neon Breach 2099</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon.png">
 </head>
 <body>
     <div id="intro-screen">
@@ -12,8 +17,8 @@
             <p>> INITIALISIERE NEON-LINK...</p>
             <p>> ZIEL: ARASAKA MAINFRAME</p>
             <p>> MISSION: ÜBERLASTE DIE DATENKERNE!</p>
-            <p>> INFO: 4ER-REIHEN ERZEUGEN KERNEL-BOMBEN.</p>
-            <button onclick="startGame()">SYSTEM INFILTRIEREN</button>
+            <p>> INFO: 4ER-REIHEN ERZEUGEN BOMBEN.</p>
+            <button onclick="startGame()">SYSTEM STARTEN</button>
         </div>
     </div>
 
@@ -25,7 +30,7 @@
             <div class="stat-box combo">COMBO: x<span id="combo">1</span></div>
         </div>
         <div id="grid"></div>
-        <div id="msg-overlay">SYSTEM START...</div>
+        <div id="msg-overlay">SYSTEM READY</div>
     </div>
     <script src="script.js"></script>
 </body>
